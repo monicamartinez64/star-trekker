@@ -1,8 +1,18 @@
+html {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
 .App {
   text-align: center;
 }
+
 body {
   width: 100%;
+  background: url(https://images-assets.nasa.gov/image/PIA12348/PIA12348~orig.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .App-logo {
@@ -43,7 +53,7 @@ body {
   width: 100%;
 }
 .nav-wrapper {
-  background-color: rgba(10, 168, 84, 0.692);
+  background-color: black;
 }
 
 @font-face {

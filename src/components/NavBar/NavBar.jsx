@@ -5,6 +5,12 @@ const NavBar = ({ user, handleLogout }) => {
     <>
         <nav>
             <div className="nav-wrapper">
+                <ul id="nav-mobile" className="left">
+                    <li><a href="/" className="nav-link">AstroTrek</a></li>
+                    <li><a href="/" className="nav-link">About</a></li>
+                    <li><a href="/" className="nav-link">Visits</a></li>
+                    <li><a href="/" className="nav-link">Constellations</a></li>
+                </ul>
                 <ul id="nav-mobile" className="right">
                     <li><a href=" " className="nav-link">Welcome, {user.name}</a></li>
                     <li><a href=" " className="nav-link" onClick={handleLogout}>Log Out</a></li>
@@ -16,6 +22,12 @@ const NavBar = ({ user, handleLogout }) => {
     <>
         <nav>
             <div className="nav-wrapper">
+                <ul id="nav-mobile" className="left">
+                <li><a href="/" className="nav-link">AstroTrek</a></li>
+                <li><a href="/" className="nav-link">About</a></li>
+                <li><a href="/" className="nav-link">Visits</a></li>
+                <li><a href="/" className="nav-link">Constellations</a></li>
+                </ul>
                 <ul id="nav-mobile" className="right">
                     <li><a href="/login" className="nav-link">Log In</a></li>
                     <li><a href="/signup" className="nav-link">Sign Up</a></li>
