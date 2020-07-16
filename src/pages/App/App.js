@@ -5,10 +5,22 @@ import NavBar from '../../components/NavBar/NavBar';
 import LoginPage from '../LoginPage/LoginPage';
 import SignupPage from '../SignupPage/SignupPage';
 import userService from '../../services/userService';
+import * as astroAPI from '../../services/astros-api';
+import AddAstroPage from '../AddAstroPage/AddAstroPage';
+import AddObservationPage from '../AddObservationPage/AddObservationPage';
+import AstroListPage from '../AstroListPage/AstroListPage';
+import ObservationListPage from '../ObservationListPage/ObservationListPage';
 
 class App extends Component {
   state = {
+    astros: [],
+    observations: [],
     user: userService.getUser()
+  }
+
+  async componentDidMount() {
+    const astros = await astroAPI.getAll();
+    this.setState({astros})
   }
 
   handleLogout = () => {
@@ -37,6 +49,27 @@ class App extends Component {
           <LoginPage
             history={history}
             handleSignupOrLogin={this.handleSignupOrLogin}
+          />
+        }/>
+        <Route exact path='/astro/add' render={() =>
+        userService.getUser() ?
+          <AddAstroPage
+          />  
+          :
+          <Redirect to='/login' />
+        }/>
+        <Route exact path='/observations/add' render={() =>
+          <AddObservationPage
+        />  
+        }/>
+        <Route exact path='/astro' render={() =>
+          <AstroListPage
+            astros={this.state.astros}
+          />  
+        }/>
+        <Route exact path='/observations' render {() =>
+          <ObservationListPage
+            observations={this.state.observations}
           />
         }/>
       </>
