@@ -22,6 +22,7 @@ function index(req, res) {
 }
 
 function deleteAstro (req, res) {
+    req.body.user = req.user._id
     Astro.findByIdAndDelete(req.params.id)
     .then(astro =>{res.json(astro)})
     .catch(err => {res.json(err)})

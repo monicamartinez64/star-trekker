@@ -7,3 +7,12 @@ export function getAll() {
     }, {mode: "cors"})
     .then(res => res.json())
 }
+
+export function create(astro) {
+    return fetch(BASE_URL, {
+      method: 'POST',
+      headers: {'content-type': 'application/json', 'Authorization': 'Bearer ' + tokenService.getToken()},
+      body: JSON.stringify(astro)
+    }, {mode: "cors"})
+    .then(res => res.json());
+}

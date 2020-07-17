@@ -9,13 +9,20 @@ import * as astroAPI from '../../services/astros-api';
 import AddAstroPage from '../AddAstroPage/AddAstroPage';
 import AddObservationPage from '../AddObservationPage/AddObservationPage';
 import AstroListPage from '../AstroListPage/AstroListPage';
-import ObservationListPage from '../ObservationListPage/ObservationListPage';
+// import ObservationListPage from '../ObservationListPage/ObservationListPage';
 
 class App extends Component {
   state = {
     astros: [],
     observations: [],
     user: userService.getUser()
+  }
+
+  handleAddAstro = async newAstroData => {
+    const newAstro = await astroAPI.create(newAstroData);
+    this.setState(state => ({
+      astros: [...state.astros, newAstro]
+    }), () => this.props.history.push('/astros'));
   }
 
   async componentDidMount() {
@@ -54,6 +61,7 @@ class App extends Component {
         <Route exact path='/astro/add' render={() =>
         userService.getUser() ?
           <AddAstroPage
+            handleAddAstro = {this.handleAddAstro}
           />  
           :
           <Redirect to='/login' />
@@ -62,15 +70,10 @@ class App extends Component {
           <AddObservationPage
         />  
         }/>
-        <Route exact path='/astro' render={() =>
+        <Route exact path='/astros' render={() =>
           <AstroListPage
             astros={this.state.astros}
           />  
-        }/>
-        <Route exact path='/observations' render {() =>
-          <ObservationListPage
-            observations={this.state.observations}
-          />
         }/>
       </>
     );
