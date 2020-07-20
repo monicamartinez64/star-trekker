@@ -9,6 +9,7 @@ import * as astroAPI from '../../services/astros-api';
 import AddAstroPage from '../AddAstroPage/AddAstroPage';
 import AddObservationPage from '../AddObservationPage/AddObservationPage';
 import AstroListPage from '../AstroListPage/AstroListPage';
+import EditAstroPage from '../EditAstroPage/EditAstroPage';
 // import ObservationListPage from '../ObservationListPage/ObservationListPage';
 
 class App extends Component {
@@ -23,6 +24,23 @@ class App extends Component {
     this.setState(state => ({
       astros: [...state.astros, newAstro]
     }), () => this.props.history.push('/astros'));
+  }
+
+  handleDeleteAstro = async id => {
+    await astroAPI.deleteOne(id);
+    this.setState(state => ({
+      astros: state.astros.filter(a => a._id !== id)
+    }), () => this.props.history.push('/astros'));
+  }
+
+  handleUpdateAstro = async updatedAstroData => {
+    const updatedAstro = await astroAPI.update(updatedAstroData);
+    const newAstrosArray = this.state.astros.map(a => 
+      a._id === updatedAstro._id ? updatedAstro : a);
+      this.setState(
+        {astros: newAstrosArray},
+        () => this.props.history.push('/astros')
+      )
   }
 
   async componentDidMount() {
@@ -73,8 +91,17 @@ class App extends Component {
         <Route exact path='/astros' render={() =>
           <AstroListPage
             astros={this.state.astros}
+            handleDeleteAstro={this.handleDeleteAstro}
           />  
         }/>
+        <Route exact path='/edit' render={({location }) =>
+          <EditAstroPage
+            handleUpdateAstro={this.handleUpdateAstro}
+            location={location}
+          />
+        }>
+
+        </Route>
       </>
     );
   }

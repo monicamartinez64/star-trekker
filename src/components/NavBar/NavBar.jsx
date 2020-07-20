@@ -9,7 +9,7 @@ const NavBar = ({ user, handleLogout }) => {
                     <li><a href="/" className="nav-link">AstroTrek</a></li>
                     <li><a href="/observations/add" className="nav-link">+ Observation</a></li>
                     <li><a href="/astro/add" className="nav-link">+ Object</a></li>
-                    <li><a href="/astro" className="nav-link">My Objects</a></li>
+                    <li><a href="/astros" className="nav-link">My Objects</a></li>
                 </ul>
                 <ul id="nav-mobile" className="right">
                     {/* <li><a href=" " className="nav-link">Welcome, {user.name}</a></li> */}

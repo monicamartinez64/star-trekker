@@ -3,15 +3,13 @@ const app = express();
 const logger = require('morgan');
 const port = process.env.PORT || 3001;
 
-const astroRouter = require('./routes/astros');
-const observationRouter = require('./routes/observations');
-
 require('dotenv').config();
 require('./config/database');
 
+const astroRouter = require('./routes/astros');
+const observationRouter = require('./routes/observations');
 const userRouter = require('./routes/users');
-const cors = require('cors')
-
+const cors = require('cors');
 
 app.use(cors());
 app.use(logger('dev'));

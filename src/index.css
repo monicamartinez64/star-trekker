@@ -1,8 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Roboto Mono', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -17,3 +15,43 @@ input {
   font-size: 20px;
   border-radius: 5px;
 }
+
+button {
+  margin: 20px;
+}
+
+main {
+  margin: 20px;
+}
+
+.input-field [type=text] {
+  color: white;
+  border-bottom: 2px solid white;
+  box-shadow: 0 2px 0 0 white;
+}
+
+.input-field input[type=text]:focus {
+  color: white;
+  border-bottom: 2px solid white;
+  box-shadow: 0 2px 0 0 white;
+}
+/* valid color */
+.input-field input[type=text].valid {
+  color: white;
+  border-bottom: 1px solid white;
+  box-shadow: 0 1px 0 0 white;
+}
+/* invalid color */
+.input-field input[type=text].invalid {
+  color: white;
+  border-bottom: 1px solid white;
+  box-shadow: 0 1px 0 0 white;
+}
+
+/* icon prefix focus color */
+.input-field .prefix.active {
+  color: white;
+  border-bottom: 1px solid white;
+  box-shadow: 0 1px 0 0 white;
+}
+  
