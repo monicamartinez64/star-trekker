@@ -30,6 +30,12 @@ main {
   box-shadow: 0 2px 0 0 white;
 }
 
+.input-field [type=date] {
+  color: white;
+  border-bottom: 2px solid white;
+  box-shadow: 0 2px 0 0 white;
+}
+
 .input-field input[type=text]:focus {
   color: white;
   border-bottom: 2px solid white;

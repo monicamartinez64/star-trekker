@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 class EditAstroPage extends Component {
     state = {
@@ -26,10 +26,9 @@ class EditAstroPage extends Component {
         return (
             <>
             <main>
-                <form ref={this.formRef} autoComplete="off" onSubmit={this.handleSubmit}>
+                <form ref={this.formRef} onSubmit={this.handleSubmit}>
                 <div className="row">
-                    <div className="input-field inline col s6">
-                     <label>Title (required)</label>
+                    <div className="input-field col s6">
                      <input
                         name="name"
                         id="astro_name"
@@ -37,71 +36,87 @@ class EditAstroPage extends Component {
                         className="active"
                         value={this.state.formData.name}
                         onChange={this.handleChange}
-                    />
+                        />
+                        <label htmlFor="astro_name">Object Name</label>
                     </div>
                 </div>
                 <div className="row">
-                    <div className="input-field inline col s6">
-                     <label>Image URL</label>
+                    <div className="input-field col s6">
                      <input
-                        name="name"
-                        id="astro_name"
+                        name="image"
+                        id="astro_image"
                         type="text"
                         className="active"
-                        value={this.state.formData.name}
+                        value={this.state.formData.image}
                         onChange={this.handleChange}
                     />
+                    <label htmlFor="astro_image">Image URL</label>
                      </div>
                  </div>
-                 <div className="form-group">
-                     <label>Type</label>
+                 <div className="row">
+                     <div className="input-field col s6">
                      <input
-                     className="form-control"
                      name="type"
+                     id="astro_type"
+                     type="text"
+                     className="active"
                      value={this.state.formData.type}
                      onChange={this.handleChange}
-                     required
                      />
+                     <label htmlFor="astro_type">Type</label>
+                     </div>
                  </div>
-                 <div className="form-group">
-                     <label>Location</label>
+                 <div className="row">
+                     <div className="input-field col s6">
                      <input
-                     className="form-control"
                      name="location"
+                     id="astro_location"
+                     type="text"
+                     className="active"
                      value={this.state.formData.location}
                      onChange={this.handleChange}
-                     required
                      />
+                     <label htmlFor="astro_location">Location</label>
+                     </div>
                  </div>
-                 <div className="form-group">
-                     <label>Proximity to Earth</label>
+                 <div className="row">
+                     <div className="input-field col s6">
                      <input
-                     className="form-control"
                      name="proximity"
+                     id="astro_proximity"
+                     type="text"
+                     className="active"
                      value={this.state.formData.proximity}
                      onChange={this.handleChange}
-                     required
                      />
+                     <label htmlFor="astro_proximity">Proximity to Earth</label>
+                     </div>
                  </div>
-                 <div className="form-group">
-                     <label>Notes</label>
+                 <div className="row">
+                     <div className="input-field col s6">
                      <input
-                     className="form-control"
                      name="notes"
+                     id="astro_notes"
+                     type="text"
+                     className="active"
                      value={this.state.formData.notes}
                      onChange={this.handleChange}
-                     required
                      />
+                     <label htmlFor="astro_notes">Notes</label>
+                     </div>
                  </div>
-                 <div className="form-group">
-                     <label>Seen?</label>
+                 <div className="row">
+                     <div className="input-field col s6">
                      <input
-                     className="form-control"
                      name="seen"
+                     id="astro_seen"
+                     type="text"
+                     className="active"
                      value={this.state.formData.seen}
                      onChange={this.handleChange}
-                     required
                      />
+                     <label htmlFor="astro_seen">Seen?</label>
+                     </div>
                  </div>
             <button
                 type="submit"

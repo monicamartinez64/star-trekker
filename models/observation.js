@@ -7,13 +7,7 @@ const observationSchema = new Schema ({
         required: true,
         default: Date.now()
     },
-    time: {
-        type: Number
-    },
     location: {
-        type: String
-    },
-    weather: {
         type: String
     },
     notes: {

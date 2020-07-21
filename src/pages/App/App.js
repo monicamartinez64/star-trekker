@@ -7,10 +7,11 @@ import SignupPage from '../SignupPage/SignupPage';
 import userService from '../../services/userService';
 import * as astroAPI from '../../services/astros-api';
 import AddAstroPage from '../AddAstroPage/AddAstroPage';
-import AddObservationPage from '../AddObservationPage/AddObservationPage';
 import AstroListPage from '../AstroListPage/AstroListPage';
 import EditAstroPage from '../EditAstroPage/EditAstroPage';
-// import ObservationListPage from '../ObservationListPage/ObservationListPage';
+import * as observationAPI from '../../services/observations-api';
+import AddObservationPage from '../AddObservationPage/AddObservationPage';
+import SearchWeatherPage from '../SearchWeatherPage/SearchWeatherPage';
 
 class App extends Component {
   state = {
@@ -24,6 +25,13 @@ class App extends Component {
     this.setState(state => ({
       astros: [...state.astros, newAstro]
     }), () => this.props.history.push('/astros'));
+  }
+
+  handleAddObservation = async newObservationData => {
+    const newObservation = await observationAPI.create(newObservationData);
+    this.setState(state => ({
+      observations: [...state.observations, newObservation]
+    }), () => this.props.history.push('/observations'));
   }
 
   handleDeleteAstro = async id => {
@@ -76,7 +84,7 @@ class App extends Component {
             handleSignupOrLogin={this.handleSignupOrLogin}
           />
         }/>
-        <Route exact path='/astro/add' render={() =>
+        <Route exact path='/astro/add' render={({ history }) =>
         userService.getUser() ?
           <AddAstroPage
             handleAddAstro = {this.handleAddAstro}
@@ -84,25 +92,35 @@ class App extends Component {
           :
           <Redirect to='/login' />
         }/>
-        <Route exact path='/observations/add' render={() =>
+        <Route exact path='/observations/add' render={({ history }) =>
+        userService.getUser() ?
           <AddObservationPage
-        />  
+            handleAddObservation = {this.handleAddObservation}
+        /> 
+          :
+          <Redirect to='/login' />  
         }/>
-        <Route exact path='/astros' render={() =>
+        <Route exact path='/astros' render={({ history }) =>
           <AstroListPage
             astros={this.state.astros}
             handleDeleteAstro={this.handleDeleteAstro}
           />  
         }/>
-        <Route exact path='/edit' render={({location }) =>
+        <Route exact path='/edit' render={({ location }) =>
           <EditAstroPage
             handleUpdateAstro={this.handleUpdateAstro}
             location={location}
           />
-        }>
+        }/>
+        <Route exact path='/weather' render={({ history }) =>
+          <SearchWeatherPage
+            history={history}
+            user={this.state.user}
+          />
+        }/>
 
-        </Route>
       </>
+
     );
   }
 }

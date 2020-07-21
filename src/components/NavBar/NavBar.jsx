@@ -6,13 +6,15 @@ const NavBar = ({ user, handleLogout }) => {
         <nav>
             <div className="nav-wrapper">
                 <ul id="nav-mobile" className="left">
-                    <li><a href="/" className="nav-link">AstroTrek</a></li>
-                    <li><a href="/observations/add" className="nav-link">+ Observation</a></li>
-                    <li><a href="/astro/add" className="nav-link">+ Object</a></li>
-                    <li><a href="/astros" className="nav-link">My Objects</a></li>
+                    <li><a href="/" className="nav-link"><h5 className="flow-text">AstroTrek</h5></a></li>
+                    <li><a href="/observations/add" className="nav-link"><i className="material-icons left">add_box</i>Observation</a></li>
+                    <li><a href="/astro/add" className="nav-link"><i className="material-icons left">add_box</i>Object</a></li>
+                    <li><a href="/astros" className="nav-link"><i className="material-icons left">brightness_2</i>My Objects</a></li>
+                    <li><a href="/observations" className="nav-link"><i className="material-icons left">remove_red_eye</i>My Obsevations</a></li>
+                    <li><a href="/weather" className="nav-link"><i className="material-icons left">cloud</i>View Weather</a></li>
                 </ul>
                 <ul id="nav-mobile" className="right">
-                    {/* <li><a href=" " className="nav-link">Welcome, {user.name}</a></li> */}
+                    <li><a href=" " className="nav-link">Welcome, {user.name}</a></li>
                     <li><a href=" " className="nav-link" onClick={handleLogout}>Log Out</a></li>
                 </ul>
             </div>
