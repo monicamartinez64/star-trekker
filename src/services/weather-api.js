@@ -1,4 +1,4 @@
-function getWeatherDataFromBackEnd(formData){
+export function getWeatherDataFromBackEnd(formData){
     console.log(formData);
     return fetch('/weather', {
         method: "POST",
@@ -7,5 +7,3 @@ function getWeatherDataFromBackEnd(formData){
     }, {mode: "cors"})
     .then(res => res.json())
 }
-
-export default getWeatherDataFromBackEnd;

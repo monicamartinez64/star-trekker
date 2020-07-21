@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import WeatherForm from '../../components/WeatherForm/WeatherForm';
-import getTimeFromTimestamp from '../../services/utils';
-import getWeatherDataFromBackEnd from '../../services/weather-api';
+import { getTimeFromTimestamp } from '../../services/utils';
+import { getWeatherDataFromBackEnd } from '../../services/weather-api';
 import WeatherCard from '../../components/WeatherCard/WeatherCard';
 
 class SearchWeatherPage extends Component {
@@ -16,7 +16,7 @@ class SearchWeatherPage extends Component {
     const sunrise = await getTimeFromTimestamp(weatherData.sys.sunrise);
     const sunset = await getTimeFromTimestamp(weatherData.sys.sunset);
     this.props.history.push('/weather');
-    this.setState({weatherData, sunrise, sunset})
+    this.setState({weatherData, sunrise, sunset});
   }
 
   render(){

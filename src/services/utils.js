@@ -1,4 +1,4 @@
-function getTimeFromTimestamp(t){
+export function getTimeFromTimestamp(t){
     var dt = new Date(t*1000);
     var hr = dt.getHours();
     var m = "0" + dt.getMinutes();
@@ -6,4 +6,3 @@ function getTimeFromTimestamp(t){
     return hr+ ':' + m.substr(-2) + ':' + s.substr(-2);  
 }
 
-export default getTimeFromTimestamp;
