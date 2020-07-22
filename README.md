@@ -18,27 +18,33 @@ AstroTrek is a star gazing app that allows users to record observations or visit
 - CSS
 - GitHub
 - Heroku
+- React
+- Node.js
+- MongoDB
+- Express
 
 ---
 
 ## Getting Started
 
-Start off by 
+Start off by creating an account. If a user does not have an account, they can view everyone else's astronomical objects.
 
-Project planning can be viewed [here]().
+Once a user is signed in, they can add, edit, view and delete astronomical objects and stargazing visits or observations.
 
-Click [here]() to get started.
+The search weather section allows a user to view the weather conditions for the evening of their observation.
+
+Project planning can be viewed [here](https://trello.com/b/08JZMFuk/unit-4-project).
+
+Click [here](https://astrotrek.herokuapp.com/) to get started.
 
 ---
 
 ## Screenshots
 
-![]()
-![]()
-![]()
-![]()
-![]()
-![]()
+![](https://imgur.com/gallery/9zwWUPT)
+![](https://imgur.com/gallery/2DZTd4M)
+![](https://imgur.com/gallery/b3gH5KG)
+![](https://imgur.com/gallery/zr6elvb)
 
 ---
 
@@ -52,4 +58,4 @@ Click [here]() to get started.
 ## Future Updates
 
 - [ ] Add weather data for each observation (visit).
-- [ ] 
+- [ ] Add NASA API to load photo of the day on home page.
