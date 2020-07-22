@@ -8,11 +8,11 @@ const favicon = require('serve-favicon');
 require('dotenv').config();
 require('./config/database');
 
-const cors = require('cors')
 const astroRouter = require('./routes/astros');
 const observationRouter = require('./routes/observations');
 const weatherRouter = require('./routes/weather');
 const userRouter = require('./routes/users');
+const cors = require('cors')
 
 app.use(cors());
 app.use(logger('dev'));
@@ -30,7 +30,7 @@ app.get('/*', function(req, res) {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
-app.listen(port, ()=> {
-    console.log(`Express is listening on port ${port}.`)
-});
+app.listen(port, function() {
+    console.log(`Express app running on port ${port}`)
+  });
 
