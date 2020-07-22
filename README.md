@@ -1,9 +1,6 @@
-![]()
+![](https://i.imgur.com/BuCAqae.png)
 
-
-By:
-
-Monica Martinez-Jimenez
+By Monica Martinez-Jimenez
 
 [Website](http://monicamj.com/) | [GitHub](https://github.com/monicamartinez64) | [LinkedIn](https://www.linkedin.com/in/monicamj/)
 
@@ -11,18 +8,16 @@ Monica Martinez-Jimenez
 
 ## Description
 
-AstroTrek
+AstroTrek is a star gazing app that allows users to record observations or visits and create their own database of astronomical objects or bodies that they wish to observe.
 
 ---
 
 ## Technologies Used
 
-
-HTML
-CSS
-GitHub
-Heroku
-
+- HTML
+- CSS
+- GitHub
+- Heroku
 
 ---
 
@@ -32,7 +27,7 @@ Start off by
 
 Project planning can be viewed [here]().
 
-Click [here](https://asmblr.herokuapp.com/) to get started.
+Click [here]() to get started.
 
 ---
 
@@ -49,10 +44,12 @@ Click [here](https://asmblr.herokuapp.com/) to get started.
 
 ## Credits
 
-CSS Styling: [Materialize](https://materializecss.com/)
+- CSS Styling: [Materialize](https://materializecss.com/)
+- API: [Open Weather](https://openweathermap.org/)
 
 ---
 
 ## Future Updates
 
-- [ ] Implement
+- [ ] Add weather data for each observation (visit).
+- [ ] 
