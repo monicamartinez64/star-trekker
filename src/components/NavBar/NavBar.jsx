@@ -9,8 +9,8 @@ const NavBar = ({ user, handleLogout }) => {
                     <li><a href="/" className="nav-link"><h5 className="flow-text">AstroTrek</h5></a></li>
                     <li><a href="/observations/add" className="nav-link"><i className="material-icons left">add_box</i>Observation</a></li>
                     <li><a href="/astro/add" className="nav-link"><i className="material-icons left">add_box</i>Object</a></li>
-                    <li><a href="/astros" className="nav-link"><i className="material-icons left">brightness_2</i>My Objects</a></li>
-                    <li><a href="/observations" className="nav-link"><i className="material-icons left">remove_red_eye</i>My Obsevations</a></li>
+                    <li><a href="/astros" className="nav-link"><i className="material-icons left">brightness_2</i>Objects List</a></li>
+                    <li><a href="/observations" className="nav-link"><i className="material-icons left">remove_red_eye</i>Obsevations List</a></li>
                     <li><a href="/weather" className="nav-link"><i className="material-icons left">cloud</i>View Weather</a></li>
                 </ul>
                 <ul id="nav-mobile" className="right">
@@ -24,11 +24,11 @@ const NavBar = ({ user, handleLogout }) => {
     <>
         <nav>
             <div className="nav-wrapper">
-                <ul id="nav-mobile" className="left">
-                <li><a href="/" className="nav-link">AstroTrek</a></li>
-                <li><a href="/" className="nav-link">About</a></li>
-                <li><a href="/" className="nav-link">Visits</a></li>
-                <li><a href="/" className="nav-link">Constellations</a></li>
+            <ul id="nav-mobile" className="left">
+                    <li><a href="/" className="nav-link"><h5 className="flow-text">AstroTrek</h5></a></li>
+                    <li><a href="/astros" className="nav-link"><i className="material-icons left">brightness_2</i>Objects</a></li>
+                    {/* <li><a href="/observations" className="nav-link"><i className="material-icons left">remove_red_eye</i>Obsevations List</a></li> */}
+                    <li><a href="/weather" className="nav-link"><i className="material-icons left">cloud</i>View Weather</a></li>
                 </ul>
                 <ul id="nav-mobile" className="right">
                     <li><a href="/login" className="nav-link">Log In</a></li>

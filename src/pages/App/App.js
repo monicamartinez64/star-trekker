@@ -11,7 +11,9 @@ import AstroListPage from '../AstroListPage/AstroListPage';
 import EditAstroPage from '../EditAstroPage/EditAstroPage';
 import * as observationAPI from '../../services/observations-api';
 import AddObservationPage from '../AddObservationPage/AddObservationPage';
+import ObservationListPage from '../ObservationListPage/ObservationListPage';
 import SearchWeatherPage from '../SearchWeatherPage/SearchWeatherPage';
+import HomePage from '../HomePage/HomePage';
 
 class App extends Component {
   state = {
@@ -72,6 +74,11 @@ class App extends Component {
           user={this.state.user}
           handleLogout={this.handleLogout}
         />
+        <Route exact path='/' render={({ history }) => 
+          <HomePage
+            history={history}
+          />
+        }/>
         <Route exact path='/signup' render={({ history }) => 
           <SignupPage
             history={history}
@@ -106,6 +113,11 @@ class App extends Component {
             handleDeleteAstro={this.handleDeleteAstro}
           />  
         }/>
+        <Route exact path='/observations' render={({ history }) =>
+          <ObservationListPage
+            observations={this.state.observations}
+          />  
+        }/>
         <Route exact path='/edit' render={({ location }) =>
           <EditAstroPage
             handleUpdateAstro={this.handleUpdateAstro}
@@ -118,7 +130,6 @@ class App extends Component {
             user={this.state.user}
           />
         }/>
-
       </>
 
     );
