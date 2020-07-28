@@ -8,20 +8,15 @@ By Monica Martinez-Jimenez
 
 ## Description
 
-AstroTrek is a star gazing app that allows users to record observations or visits and create their own database of astronomical objects or bodies that they wish to observe.
+Star Trekker is a star gazing app that allows users to record observations or visits and create their own database of astronomical objects or bodies that they wish to observe.
 
 ---
 
 ## Technologies Used
 
-- HTML
-- CSS
-- GitHub
-- Heroku
-- React
-- Node.js
-- MongoDB
-- Express
+- HTML | CSS | JavaScript | GitHub | Heroku | React | Node.js | MongoDB
+  
+![](public/images/html5.png)![](public/images/css.png)![](public/images/javascript2.png)![](public/images/react.png)![](public/images/nodejs.png)![](public/images/mongodb.png)
 
 ---
 
