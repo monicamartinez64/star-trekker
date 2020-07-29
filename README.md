@@ -1,4 +1,4 @@
-![](https://i.imgur.com/BuCAqae.png)
+![](public/images/header.png)
 
 By Monica Martinez-Jimenez
 
@@ -14,9 +14,11 @@ Star Trekker is a star gazing app that allows users to record observations or vi
 
 ## Technologies Used
 
-- HTML | CSS | JavaScript | GitHub | Heroku | React | Node.js | MongoDB
-  
-![](public/images/html5.png)![](public/images/css.png)![](public/images/javascript2.png)![](public/images/react.png)![](public/images/nodejs.png)![](public/images/mongodb.png)
+HTML | CSS | JavaScript | GitHub | Heroku | React | Node.js | MongoDB
+
+![](public/images/technologies.png)
+
+
 
 ---
 
@@ -36,10 +38,10 @@ Click [here](https://astrotrek.herokuapp.com/) to get started.
 
 ## Screenshots
 
-![](https://imgur.com/gallery/9zwWUPT)
-![](https://imgur.com/gallery/2DZTd4M)
-![](https://imgur.com/gallery/b3gH5KG)
-![](https://imgur.com/gallery/zr6elvb)
+![](public/images/homepage.png)
+![](public/images/objectslist.png)
+![](public/images/addobject.png)
+![](public/images/searchweather.png)
 
 ---
 
